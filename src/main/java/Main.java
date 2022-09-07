@@ -30,6 +30,10 @@ public class Main {
         System.out.println(mapOfStudents);
         System.out.println(mapOfStudents.get(3));
 
+
+        mapOfStudents.remove(1);
+
+
         }
 
 

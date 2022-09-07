@@ -7,15 +7,19 @@ import java.util.Objects;
 
 public class StudentDB {
 
-    private HashMap<Integer, Student> students;
+    private HashMap<String, Student> students;
 
-    public HashMap<Integer, Student> getStudents() {
-        return students;
+    public Student add(Student student){
+        students.put(student.getId(), student);
+        return student;
+
     }
 
-    public void setStudents(HashMap<Integer, Student> students) {
-        this.students = students;
+    public void remove(String Id){
+        students.remove(Id);
+
     }
+
 
     @Override
     public String toString() {

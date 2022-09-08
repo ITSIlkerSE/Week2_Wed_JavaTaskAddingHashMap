@@ -2,12 +2,23 @@ package repo;
 
 import model.Student;
 
+import java.io.StringReader;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class StudentDB {
 
-    private HashMap<String, Student> students;
+    private Map<String, Student> students;
+
+
+    public Student findById(String id) {
+        if (students.containsKey(id)) {
+        return students.get(id);
+        }else {
+            throw new RuntimeException("Student mit der " + id + " konnte nicht gefunden werden !");
+        }
+    } 
 
     public Student add(Student student){
         students.put(student.getId(), student);
